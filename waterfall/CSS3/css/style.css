@@ -1,0 +1,19 @@
+#main {
+  /* 多列布局 */
+  column-width: 202px;
+}
+.box {
+  padding: 10px 0 0 15px;
+}
+.pic {
+  padding: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 4px #ccc;
+  border-radius: 5px;
+  width: 165px;
+}
+.pic img {
+  display: block;
+  width:165px;
+  height: auto;
+}
