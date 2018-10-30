@@ -1,0 +1,25 @@
+<!-- posts.ejs 的目的是按照行列显示传入的 posts 的所有内容 -->
+<% posts.forEach(function(post, index) {  
+  if (index % 3 == 0) { %>
+<!-- 3的倍数的话，需要新的一行 -->
+<div class="row">
+  <%} %>
+  <!-- 单篇微博内容 -->
+  <div class="span4">
+    <h2><a href="/u/<%= post.user %>">
+        <%= post.user %></a> 说</h2>
+    <p><small>
+        <%= post.time %></small></p>
+    <p>
+      <%= post.post %>
+    </p>
+  </div>
+  <!-- 当到这一行第三篇微博的话，结束这一行 -->
+  <% if (index % 3 == 2) { %>
+</div><!-- end row -->
+<% } %>
+<%}) %>
+<!-- 不是这一行最后一篇微博的话，不必结束这一行 -->
+<% if (posts.length % 3 != 0) { %>
+</div>
+<%} %>

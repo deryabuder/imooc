@@ -1,0 +1,16 @@
+<!-- 需要传入user,posts -->
+<!-- 主体内容的替换 -->
+<% if (!user) { %>
+<div class="hero-unit">
+  <h1>欢迎来到 Microblog</h1>
+  <p>Microblog 是一个基于 Node.js 的微博系统。</p>
+  <p>
+    <a class="btn btn-primary btn-large" href="/login">登录</a>
+    <a class="btn btn-large" href="/reg">立即注册</a>
+  </p>
+</div>
+<% } else { %>
+<%- partial('say') %>
+<% } %>
+<%- partial('posts', {posts:posts}) %>
+<!-- partial是一个页面的片段，通常是重复的内容，用于迭代显示 -->

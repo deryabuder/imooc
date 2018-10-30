@@ -1,0 +1,7 @@
+<!-- 如果用户存在的话，要包括say和posts两个模块，否则只有posts模块 -->
+<!-- express 3.x 版本的 转换为4.x 版本的，要用include替代partial(用于迭代一个数组) -->
+<!-- 传入post即可 -->
+<% if (user) { %>
+<%- include say %>
+<% } %>
+<%- include posts %>

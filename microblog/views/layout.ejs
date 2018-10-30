@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+  </style>
+  <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<!-- 需要传入user,success,error,body -->
+<!-- 页面模板 -->
+
+<body>
+  <!-- 头部导航栏 -->
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">Microblog</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="/">首页</a></li>
+            <% if (!user) { %>
+            <li><a href="/login">登入</a></li>
+            <li><a href="/reg">注册</a></li>
+            <% } else { %>
+            <li><a href="/logout">登出</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="container" class="container">
+    <!-- 页面提示部分 -->
+    <% if (success) { %>
+    <div class="alert alert-success">
+      <!-- 成功的话显示的内容 -->
+      <%= success %>
+    </div>
+    <% } %>
+    <% if (error) { %>
+    <div class="alert alert-error">
+      <!-- 出错的话显示的内容 -->
+      <%= error %>
+    </div>
+    <% } %>
+    <!-- 页面主体 -->
+    <%- body %>
+    <hr />
+    <!-- 页尾 -->
+    <footer>
+      <p><a href="http://weibo.com/u/2023715171/home?topnav=1&wvr=5" target="_blank">yuanzm</a> 2014</p>
+    </footer>
+  </div>
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+
+</html>
